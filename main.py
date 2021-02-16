@@ -15,7 +15,7 @@ def echo(update: Update, context: CallbackContext) -> None:
 
 
 
-bot = Bot(token=os.environ["TOKEN"])
+bot = Bot(token="1603656516:AAFgz7UPJ-3_L7iN8MmoRRJqvz-isWF5ywA")
 
 dispatcher = Dispatcher(bot=bot, update_queue=None, workers=0)
 dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo))
@@ -26,4 +26,4 @@ def index() -> Response:
     dispatcher.process_update(
         Update.de_json(request.get_json(force=True), bot))
 
-    return "", http.HTTPStatus.NO_CONTENT
+    return "hello", http.HTTPStatus.FOUND
